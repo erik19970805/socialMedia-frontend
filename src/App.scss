@@ -10,8 +10,12 @@
   max-height: 100vh;
   background: white;
 }
+
 .main {
   max-width: 1000px;
   width: 100%;
   margin: auto;
 }
+
+// ------------- AUTH ----------
+@import './styles/auth.scss';
