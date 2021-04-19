@@ -40,9 +40,7 @@ const Signin = (): JSX.Element => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="passwordLabel" className="form-label">
-            Password
-          </label>
+          <label htmlFor="passwordLabel">Password</label>
           <div className="pass">
             <input
               type={typePass ? 'text' : 'password'}
