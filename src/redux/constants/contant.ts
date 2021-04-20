@@ -1,2 +1,2 @@
 export const AUTH = 'AUTH';
-export const NOTIFY = 'NOTIFY';
+export const ALERT = 'ALERT';

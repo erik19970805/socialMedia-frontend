@@ -24,7 +24,7 @@ const Signin = (): JSX.Element => {
   return (
     <div className="auth_page">
       <form onSubmit={handleSubmit}>
-        <h3 className="text-uppercase text-center mb-4">Social Meadia</h3>
+        <h3 className="text-uppercase text-center mb-4">Red Social</h3>
         <div className="mb-3">
           <label htmlFor="emailLabel" className="form-label">
             Correo Electronico

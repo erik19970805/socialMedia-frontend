@@ -1,21 +1,21 @@
-import { AUTH, NOTIFY } from '../redux/constants/contant';
-import { notify, user } from './state.interface';
+import { AUTH, ALERT } from '../redux/constants/contant';
+import { alert, auth } from './state.interface';
 
 export interface IConstantAuth {
   type: typeof AUTH;
-  payload: user;
+  payload: auth;
 }
 export interface INotifyLoading {
-  type: typeof NOTIFY;
-  payload: notify;
+  type: typeof ALERT;
+  payload: alert;
 }
 export interface INotifySuccess {
-  type: typeof NOTIFY;
-  payload: notify;
+  type: typeof ALERT;
+  payload: alert;
 }
 export interface INotifyFail {
-  type: typeof NOTIFY;
-  payload: notify;
+  type: typeof ALERT;
+  payload: alert;
 }
 
-export type constantActions = IConstantAuth | INotifySuccess | INotifyLoading | INotifyFail;
+export type ConstantActions = IConstantAuth | INotifySuccess | INotifyLoading | INotifyFail;

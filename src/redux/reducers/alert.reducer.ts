@@ -1,14 +1,14 @@
 import { ConstantActions } from '../../interfaces/constant.interface';
 import { IDefaultState } from '../../interfaces/state.interface';
-import { AUTH } from '../constants/contant';
+import { ALERT } from '../constants/contant';
 
-const auth = (state: IDefaultState = {}, action: ConstantActions): IDefaultState => {
+const notify = (state: IDefaultState = {}, action: ConstantActions): IDefaultState => {
   switch (action.type) {
-    case AUTH:
+    case ALERT:
       return action.payload;
     default:
       return state;
   }
 };
 
-export default auth;
+export default notify;
