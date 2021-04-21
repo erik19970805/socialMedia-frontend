@@ -1,6 +1,12 @@
-export interface IAuth {
+export interface IAuthSignin {
   email: string;
   password: string;
-  fullname?: string;
-  username?: string;
+}
+export interface IAuthSignup {
+  fullname: string;
+  username: string;
+  email: string;
+  password: string;
+  cfPassword: string;
+  gender: string;
 }

@@ -13,17 +13,18 @@ const Toast = ({
 }): JSX.Element => {
   let timer: NodeJS.Timeout;
   const dispatch = useDispatch();
-
-  const show = () => {
+  const handleShow = () => {
     dispatch<ConstantActions>({ type: 'ALERT', payload: {} });
     clearTimeout(timer);
   };
 
   useEffect(() => {
-    timer = setTimeout(() => {
-      dispatch<ConstantActions>({ type: 'ALERT', payload: {} });
-    }, 15000);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    timer = setTimeout(
+      () => dispatch<ConstantActions>({ type: 'ALERT', payload: {} }),
+      15000
+    );
+  }, [dispatch, setTimeout]);
 
   return (
     <div
@@ -37,7 +38,7 @@ const Toast = ({
           className="btn-close btn-close-white"
           data-bs-dismiss="toast"
           style={{ outline: 'none' }}
-          onClick={show}
+          onClick={handleShow}
         >
           &#8289;
         </button>

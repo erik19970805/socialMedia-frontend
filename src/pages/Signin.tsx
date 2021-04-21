@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { IAuth } from '../interfaces/auth.interface';
+import { IAuthSignin } from '../interfaces/auth.interface';
 import { signin } from '../redux/actions/auth.action';
 
 const Signin = (): JSX.Element => {
-  const [userData, setUserData] = useState<IAuth>({ email: '', password: '' });
-  const [typePass, setTypePass] = useState<boolean>(false);
+  const [userData, setUserData] = useState<IAuthSignin>({ email: '', password: '' });
+  const [typePassword, setTypePassword] = useState<boolean>(false);
   const { email, password } = userData;
 
   const dispatch = useDispatch();
@@ -40,21 +40,23 @@ const Signin = (): JSX.Element => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="passwordLabel">Password</label>
+          <label htmlFor="passwordLabel">Contraseña</label>
           <div className="pass">
             <input
-              type={typePass ? 'text' : 'password'}
+              type={typePassword ? 'text' : 'password'}
               className="form-control"
               id="passwordLabel"
               name="password"
               value={password}
               onChange={handleChangeInput}
             />
-            <small onClick={() => setTypePass(!typePass)}>{typePass ? 'ocultar' : 'ver'}</small>
+            <small onClick={() => setTypePassword(!typePassword)}>
+              {typePassword ? 'ocultar' : 'ver'}
+            </small>
           </div>
         </div>
         <button type="submit" className="btn btn-dark w-100" disabled={!(email && password)}>
-          Signin
+          Iniciar Sesión
         </button>
         <p className="my-2">
           ¿Aun no no tiene una cuenta?
