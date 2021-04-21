@@ -9,4 +9,6 @@ export interface IAuthSignup {
   password: string;
   cfPassword: string;
   gender: string;
+  _id?: string;
+  avatar?: string;
 }

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
 import { IAuthSignin } from '../interfaces/auth.interface';
+import { IState } from '../interfaces/state.interface';
 import { signin } from '../redux/actions/auth.action';
 
 const Signin = (): JSX.Element => {
@@ -9,6 +10,8 @@ const Signin = (): JSX.Element => {
   const [typePassword, setTypePassword] = useState<boolean>(false);
   const { email, password } = userData;
 
+  const selectState = useSelector<IState, IState>((state) => state);
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +23,10 @@ const Signin = (): JSX.Element => {
     e.preventDefault();
     dispatch(signin(userData));
   };
+
+  useEffect(() => {
+    if (selectState.auth.token) history.push('/');
+  }, [history, selectState.auth.token]);
 
   return (
     <div className="auth_page">

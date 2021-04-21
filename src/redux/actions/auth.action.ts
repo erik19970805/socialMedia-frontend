@@ -32,6 +32,12 @@ export const signin = (userData: IAuthSignin) => async (
   }
 };
 
+export const signout = () => async (dispatch: Dispatch<ConstantActions>): Promise<void> => {
+  localStorage.removeItem('firstLogin');
+  await api(dispatch, 'POST', '/auth/signout');
+  window.location.href = '/';
+};
+
 export const refreshToken = () => async (dispatch: Dispatch<ConstantActions>): Promise<void> => {
   const firstLogin = localStorage.getItem('firstLogin');
   if (firstLogin) {

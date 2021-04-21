@@ -17,6 +17,10 @@
   margin: auto;
 }
 
+img {
+  object-fit: cover;
+}
+
 // ------------- AUTH ----------
 @import './styles/auth.scss';
 

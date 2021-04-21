@@ -8,13 +8,15 @@ export interface alert {
 
 export interface auth {
   token: string;
-  user: object;
+  user: IAuthSignup;
 }
 
 export interface IState {
   alert: alert;
   valid: IAuthSignup;
   auth: auth;
+  theme: boolean;
 }
 
-export type IDefaultState = alert | auth | IAuthSignup;
+export type theme = boolean;
+export type IDefaultState = alert | auth | IAuthSignup | theme;

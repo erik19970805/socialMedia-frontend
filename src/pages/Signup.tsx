@@ -169,7 +169,7 @@ const Signup = (): JSX.Element => {
         </button>
         <p className="my-2">
           ¿Ya tienes una cuenta?
-          <Link to="/signin" style={{ color: 'crimson', marginLeft: '0.5rem' }}>
+          <Link to="/" style={{ color: 'crimson', marginLeft: '0.5rem' }}>
             Inicia sesión ahora
           </Link>
         </p>
