@@ -1,0 +1,15 @@
+@mixin avatar($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+}
+
+.big-avatar {
+  @include avatar(50px, 50px);
+}
+.medium-avatar {
+  @include avatar(30px, 30px);
+}
+.small-avatar {
+  @include avatar(20px, 20px);
+}

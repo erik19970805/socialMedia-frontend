@@ -1,4 +1,13 @@
 import { IAuthSignup } from './auth.interface';
+import { IUser } from './user.interface';
+
+export interface IState {
+  alert: alert;
+  valid: IAuthSignup;
+  auth: auth;
+  theme: boolean;
+  user: user;
+}
 
 export interface alert {
   loading?: boolean;
@@ -11,12 +20,9 @@ export interface auth {
   user: IAuthSignup;
 }
 
-export interface IState {
-  alert: alert;
-  valid: IAuthSignup;
-  auth: auth;
-  theme: boolean;
+export interface user {
+  searchUser: IUser[];
 }
 
 export type theme = boolean;
-export type IDefaultState = alert | auth | IAuthSignup | theme;
+export type IDefaultState = alert | auth | IAuthSignup | theme | user;

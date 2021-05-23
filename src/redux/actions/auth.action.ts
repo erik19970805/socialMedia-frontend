@@ -45,7 +45,7 @@ export const refreshToken = () => async (dispatch: Dispatch<ConstantActions>): P
     const { data } = await api(dispatch, 'POST', '/auth/refresh_token');
     if (data !== null) {
       dispatch({ type: 'AUTH', payload: { token: data.accessToken, user: data.user } });
+      dispatch({ type: 'ALERT', payload: {} });
     }
-    dispatch({ type: 'ALERT', payload: {} });
   }
 };

@@ -1,6 +1,6 @@
-import { AUTH, ALERT, VALID, THEME } from '../redux/constants/contant';
+import { AUTH, ALERT, VALID, THEME, USER } from '../redux/constants/contant';
 import { IAuthSignup } from './auth.interface';
-import { alert, auth, theme } from './state.interface';
+import { alert, auth, theme, user } from './state.interface';
 
 export interface IConstantAuth {
   type: typeof AUTH;
@@ -21,4 +21,9 @@ export interface ITheme {
   payload: theme;
 }
 
-export type ConstantActions = IConstantAuth | IAlert | IValid | ITheme;
+export interface ITypeUser {
+  type: typeof USER;
+  payload: user;
+}
+
+export type ConstantActions = IConstantAuth | IAlert | IValid | ITheme | ITypeUser;

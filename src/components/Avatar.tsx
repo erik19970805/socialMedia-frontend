@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Avatar = ({ src }: { src: string | undefined }): JSX.Element => (
-  <img src={src} alt="avatar" style={{ width: 23, height: 23, filter: 'invert(0)' }} />
+const Avatar = ({ src, size }: { src: string | undefined; size: string }): JSX.Element => (
+  <img src={src} alt="avatar" className={size} style={{ filter: 'invert(0)' }} />
 );
 
 export default Avatar;
